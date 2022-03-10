@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+const courses = [
+  {
+    id: 1,
+    name: 'HTML & CSS',
+  },
+  {
+    id: 2,
+    name: 'Javacript',
+  },
+  {
+    id: 3,
+    name: 'ReactJS',
+  },
+]
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ padding: 32 }}>
+        {courses.map(course => (
+          <div key={course.id}><input type="checkbox" onChange={() => { }} />{course.name}</div>))}
+      </div>
+      <button>Register</button>
     </div>
-  );
+  )
 }
 
 export default App;
