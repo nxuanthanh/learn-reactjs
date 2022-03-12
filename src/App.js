@@ -1,28 +1,19 @@
 import { useState } from "react";
-
-const courses = [
-  {
-    id: 1,
-    name: 'HTML & CSS',
-  },
-  {
-    id: 2,
-    name: 'Javacript',
-  },
-  {
-    id: 3,
-    name: 'ReactJS',
-  },
-]
+import CheckBox from "./Component/CheckBox";
+// import RadioBox from "./Component/RadioBox";
+// import TodoList from "./Component/TooList";
+// import CountDown from "./Component/CountDown";
+// import UnSubsribe from "./Component/UnSubscribe";
+// import UseRef from "./Component/useRef";
+// import Content from './Content';
 
 function App() {
+  const [show, setShow] = useState(false)
+
   return (
-    <div className="App">
-      <div style={{ padding: 32 }}>
-        {courses.map(course => (
-          <div key={course.id}><input type="checkbox" onChange={() => { }} />{course.name}</div>))}
-      </div>
-      <button>Register</button>
+    <div style={{ marginTop: "40px", padding: "40px" }}>
+      <button onClick={() => { setShow(!show) }}>Toggle</button>
+      {show && <CheckBox />}
     </div>
   )
 }
