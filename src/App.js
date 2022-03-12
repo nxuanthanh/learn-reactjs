@@ -1,5 +1,8 @@
 import { useState } from "react";
-import CheckBox from "./Component/CheckBox";
+import TodoAppUseReducer from "./Component/TodoAppUseReducer";
+// import CheckBox from "./Component/CheckBox";
+// import UseMemo from "./Component/UseMemo";
+// import UseReducer from "./Component/UseReducer";
 // import RadioBox from "./Component/RadioBox";
 // import TodoList from "./Component/TooList";
 // import CountDown from "./Component/CountDown";
@@ -13,7 +16,7 @@ function App() {
   return (
     <div style={{ marginTop: "40px", padding: "40px" }}>
       <button onClick={() => { setShow(!show) }}>Toggle</button>
-      {show && <CheckBox />}
+      {show && <TodoAppUseReducer />}
     </div>
   )
 }

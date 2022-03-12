@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StoreProvider } from './store';
+import Container from './Container';
 
 function emitComponent(id) {
   setInterval(() => {
@@ -18,7 +19,9 @@ emitComponent(3)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StoreProvider>
+      <Container />
+    </StoreProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
